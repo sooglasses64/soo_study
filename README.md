@@ -13,7 +13,7 @@
 
 ### 1. MySQL 데이터베이스 설정
 
-(1) MySQL 설치 및 서버 시작
+(1) MySQL 설치 및 서버 시작   
 (2) 데이터베이스 및 테이블 생성:
    ```sql
    CREATE DATABASE test;
@@ -23,10 +23,8 @@
        userPassword VARCHAR(255) NOT NULL,
        userName VARCHAR(255) NOT NULL,
        userSignUpDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-   );
-   INSERT INTO Users (id, password) VALUES ('soo2', '1234');
-   SELECT password FROM Users WHERE id='soo2';
-   
+   );```
+
 ### 2. Node.js 프로젝트 설정
 프로젝트 초기화:
 ```bash
