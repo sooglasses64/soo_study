@@ -15,31 +15,35 @@
 
 (1) MySQL 설치 및 서버 시작   
 (2) 데이터베이스 및 테이블 생성:
-   ```sql
-   CREATE DATABASE test;
+```sql
+ CREATE DATABASE test;
    USE test;
    CREATE TABLE users (
        userId INT AUTO_INCREMENT PRIMARY KEY,
        userPassword VARCHAR(255) NOT NULL,
        userName VARCHAR(255) NOT NULL,
        userSignUpDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-   );```
+   );
+```
+
 
 ### 2. Node.js 프로젝트 설정
 프로젝트 초기화:
 ```bash
-
 mkdir mysql_study
 cd mysql_study
 npm init -y
+```
+
 
 필요한 패키지 설치:
 ```bash
 npm install express mysql2
+```
+
 
 ### 3. 데이터베이스 연결 설정
 userDBC.js:
-
 ```javascript
 const mysql = require('mysql2');
 
@@ -63,9 +67,10 @@ const getUsers = async () => {
 module.exports = {
   getUsers
 };
+```
+
 ### 4. 라우터 설정
 userRouter.js:
-
 ```javascript
 const express = require('express');
 const userDBC = require('./userDBC');
@@ -108,6 +113,7 @@ router.get('/getUsers', async (req, res) => {
 });
 
 module.exports = router;
+```
 ### 5. 서버 설정
 - App.js:
 
